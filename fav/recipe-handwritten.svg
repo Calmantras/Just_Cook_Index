@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Handschriftliches Rezept</title>
+  <desc id="desc">Ein handgeschriebenes Apfelkuchenrezept auf einem alten Blatt Papier.</desc>
+  <defs>
+    <linearGradient id="table" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#896a4f"/>
+      <stop offset="1" stop-color="#5f4433"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#2a1a10" flood-opacity=".34"/>
+    </filter>
+    <pattern id="grain" width="110" height="24" patternUnits="userSpaceOnUse">
+      <path d="M0 10c28-8 56 8 110-2M0 20c35-7 70 4 110-5" fill="none" stroke="#b99a7d" stroke-opacity=".22" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="url(#table)"/>
+  <rect width="1200" height="800" fill="url(#grain)"/>
+  <g transform="translate(174 70) rotate(-2 430 330)" filter="url(#shadow)">
+    <path d="M24 10C210 2 645 12 852 4l12 638c-236 15-572-8-848 5z" fill="#f6edcf"/>
+    <path d="M48 76h770M48 130h770M48 184h770M48 238h770M48 292h770M48 346h770M48 400h770M48 454h770M48 508h770M48 562h770" stroke="#9cb2bb" stroke-opacity=".42" stroke-width="2"/>
+    <path d="M116 30v586" stroke="#ce8580" stroke-opacity=".55" stroke-width="3"/>
+    <g fill="#42382f" font-family="Segoe Print, Comic Sans MS, cursive">
+      <text x="154" y="112" font-size="48" font-weight="700">Omas Apfelkuchen</text>
+      <text x="150" y="176" font-size="28">3 &#196;pfel, 250 g Mehl</text>
+      <text x="150" y="230" font-size="28">150 g Butter, 120 g Zucker</text>
+      <text x="150" y="284" font-size="28">2 Eier, Zimt, 1 TL Backpulver</text>
+      <text x="150" y="372" font-size="27">Butter und Zucker verr&#252;hren,</text>
+      <text x="150" y="426" font-size="27">Eier dazu. Mehl unterheben.</text>
+      <text x="150" y="480" font-size="27">&#196;pfel klein schneiden und</text>
+      <text x="150" y="534" font-size="27">bei 180 Grad ca. 45 Min. backen.</text>
+      <text x="570" y="598" font-size="25" transform="rotate(-4 570 598)">Gutes Gelingen!</text>
+    </g>
+    <path d="M603 325c35-22 83-12 95 24 11 34-19 70-82 94-60-26-85-63-70-95 12-27 37-35 57-23z" fill="none" stroke="#a4514a" stroke-width="5" opacity=".66"/>
+  </g>
+</svg>
