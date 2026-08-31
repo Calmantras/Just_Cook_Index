@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,17 +9,19 @@
   <link rel="shortcut icon" href="fav/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
   <link rel="manifest" href="fav/site.webmanifest">
-  <meta name="description" content="Scan, import, and organize your favorite recipes in one place. With Just Cook!, your digital cookbook is always within reach.">
+  <meta name="description" content="Bewahre Omas beste Rezepte für immer auf. Einfach Kochbücher oder handschriftliche Zettel abfotografieren. Dein einfaches, digitales Kochbuch. Jetzt testen!">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://just-cook.app/">
   <meta property="og:type" content="website">
-  <meta property="og:locale" content="en_US">
+  <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="Just Cook!">
-  <meta property="og:title" content="A digital cookbook for your recipes - Just Cook!">
-  <meta property="og:description" content="Collect, organize, and share recipes from photos and links in one place.">
+  <meta property="og:title" content="Just Cook! | Handgeschriebene Rezepte &amp; Erinnerungen einfach digitalisieren">
+  <meta property="og:description" content="Bewahre Omas beste Rezepte für immer auf. Einfach Kochbücher oder handschriftliche Zettel abfotografieren. Dein einfaches, digitales Kochbuch. Jetzt testen!">
   <meta property="og:url" content="https://just-cook.app/">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>A digital cookbook for your recipes - Just Cook!</title>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Just Cook! | Handgeschriebene Rezepte &amp; Erinnerungen einfach digitalisieren">
+  <meta name="twitter:description" content="Bewahre Omas beste Rezepte für immer auf. Einfach Kochbücher oder handschriftliche Zettel abfotografieren. Dein einfaches, digitales Kochbuch. Jetzt testen!">
+  <title>Just Cook! | Handgeschriebene Rezepte &amp; Erinnerungen einfach digitalisieren</title>
   <style>
     :root {
       --primary: #187a3b;
@@ -70,11 +72,6 @@
     .skip-link:focus { transform: translateY(0); }
     :focus-visible { outline: 3px solid rgba(24, 122, 59, .28); outline-offset: 3px; }
 
-    .eyebrow {
-      display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
-      color: var(--primary); font-size: 11px; font-weight: 800; letter-spacing: .11em; text-transform: uppercase;
-    }
-    .eyebrow::before { width: 28px; height: 2px; background: var(--primary); content: ""; }
     .section-heading {
       max-width: 700px; margin: 0 0 18px; font-size: clamp(32px, 4.4vw, 52px);
       line-height: 1.04; letter-spacing: -.048em;
@@ -94,8 +91,6 @@
     .button-primary { color: #fff; background: var(--primary); box-shadow: var(--shadow-sm); }
     .button-primary:hover { background: var(--primary-hover); }
     .button-primary:active { background: var(--primary-active); transform: translateY(0); }
-    .button-secondary { border-color: var(--border); background: var(--surface); }
-    .button-secondary:hover { border-color: #a7c1ac; color: var(--primary); background: var(--primary-soft); }
     .button svg { width: 18px; height: 18px; }
 
     .site-header {
@@ -123,16 +118,9 @@
     }
     .hero-grid { display: grid; grid-template-columns: minmax(0, .86fr) minmax(540px, 1.14fr); align-items: center; gap: clamp(48px, 7vw, 94px); }
     .hero-copy { padding-bottom: 24px; }
-    .beta-note {
-      width: fit-content; display: flex; align-items: center; gap: 9px; margin-bottom: 24px; padding: 7px 11px;
-      border: 1px solid #cce5d1; border-radius: 999px; color: #31583b; background: rgba(255, 255, 255, .72); font-size: 12px; font-weight: 700;
-    }
-    .beta-note i { width: 7px; height: 7px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px var(--primary-soft); }
-    h1 { margin-bottom: 24px; font-size: clamp(42px, 5.6vw, 68px); line-height: .99; letter-spacing: -.058em; }
+    h1 { margin-bottom: 24px; font-size: clamp(38px, 4.8vw, 58px); line-height: 1.02; letter-spacing: -.052em; }
     .hero-lead { max-width: 570px; margin-bottom: 30px; color: var(--muted); font-size: clamp(17px, 1.7vw, 20px); line-height: 1.48; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-    .hero-footnote { display: flex; align-items: center; gap: 9px; margin: 18px 0 0; color: var(--muted); font-size: 12px; }
-    .hero-footnote svg { width: 16px; color: var(--primary); }
 
     .app-stage { position: relative; min-width: 0; }
     .app-window {
@@ -191,57 +179,36 @@
     .features-intro .section-heading { margin-bottom: 0; }
     .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .feature-card {
-      position: relative; min-height: 294px; display: flex; flex-direction: column; padding: 30px;
+      position: relative; min-height: 320px; display: flex; flex-direction: column; padding: 30px;
       border: 1px solid var(--border); border-radius: 20px; background: var(--surface); box-shadow: var(--shadow-sm);
       transition: transform .2s, border-color .2s, box-shadow .2s;
     }
     .feature-card:hover { transform: translateY(-2px); border-color: #abcbb2; box-shadow: var(--shadow-md); }
-    .feature-number { position: absolute; top: 31px; right: 30px; color: #a4ada5; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
-    .feature-icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 44px; border-radius: 15px; color: var(--primary); background: var(--primary-soft); }
+    .feature-icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: 32px; border-radius: 15px; color: var(--primary); background: var(--primary-soft); }
     .feature-icon svg { width: 24px; height: 24px; }
     .feature-card h3 { margin-bottom: 10px; font-size: 22px; line-height: 1.15; letter-spacing: -.035em; }
-    .feature-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .feature-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
 
     .showcase { padding: 100px 0; background: #173a2d; color: #fff; overflow: hidden; }
     .showcase::before {
       position: absolute; right: -200px; bottom: -260px; width: 580px; height: 580px;
       border: 1px solid rgba(201, 239, 112, .25); border-radius: 50%; content: "";
     }
-    .showcase-grid { display: grid; grid-template-columns: 1.04fr .96fr; align-items: center; gap: clamp(55px, 8vw, 100px); }
-    .recipe-detail { position: relative; overflow: hidden; border: 1px solid #d8dfd8; border-radius: 14px; background: #f8f9f5; color: var(--text); box-shadow: 0 28px 60px rgba(0, 0, 0, .24); }
-    .detail-toolbar { height: 32px; display: flex; align-items: center; justify-content: space-between; padding: 0 14px; border-bottom: 1px solid #dde3dd; color: #536057; background: #fff; font-size: 7px; font-weight: 700; }
-    .detail-photo { position: relative; height: 200px; overflow: hidden; background: #eff2ed; }
-    .detail-photo img { width: 36%; min-width: 150px; height: 100%; margin-inline: auto; object-fit: cover; }
-    .detail-menu { position: absolute; top: 9px; right: 10px; width: 24px; height: 24px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: #203127; font-size: 12px; }
-    .detail-content { width: min(68%, 390px); margin-inline: auto; padding: 18px 0 24px; }
-    .detail-kicker { margin-bottom: 2px; color: var(--primary); font-size: 7px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-    .detail-title { margin-bottom: 14px; font-size: 19px; line-height: 1.12; letter-spacing: -.035em; }
-    .detail-content h3 { margin-bottom: 8px; font-size: 10px; letter-spacing: -.02em; }
-    .ingredient-list, .step-list { padding: 0; margin: 0; list-style: none; }
-    .ingredient-list { display: grid; gap: 4px; margin-bottom: 14px; }
-    .ingredient-list li { position: relative; display: block; padding-left: 11px; color: #49564d; font-size: 7px; }
-    .ingredient-list li::before { position: absolute; top: .5em; left: 2px; width: 3px; height: 3px; border-radius: 50%; background: var(--primary); content: ""; }
-    .ingredient-list strong { color: inherit; font-size: inherit; font-weight: 500; }
-    .step-list { display: grid; gap: 7px; }
-    .step-list li { display: grid; grid-template-columns: 15px 1fr; gap: 6px; color: #49564d; font-size: 7px; line-height: 1.45; }
-    .step-number { width: 15px; height: 15px; display: grid; place-items: center; border-radius: 4px; color: var(--primary); background: var(--primary-soft); font-size: 6px; font-weight: 800; }
-    .showcase-copy .eyebrow { color: var(--lime); }
-    .showcase-copy .eyebrow::before { background: var(--lime); }
+    .showcase-grid { display: grid; grid-template-columns: 1.08fr .92fr; align-items: center; gap: clamp(55px, 8vw, 100px); }
+    .comparison { --split: 50%; position: relative; overflow: hidden; aspect-ratio: 3 / 2; border: 1px solid rgba(255,255,255,.2); border-radius: 20px; background: #f4efe5; box-shadow: 0 28px 60px rgba(0, 0, 0, .24); touch-action: pan-y; user-select: none; }
+    .comparison:focus-within { outline: 3px solid rgba(201, 239, 112, .72); outline-offset: 4px; }
+    .comparison-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
+    .comparison-image-after { clip-path: inset(0 0 0 var(--split)); }
+    .comparison-divider { position: absolute; z-index: 2; top: 0; bottom: 0; left: var(--split); width: 2px; background: #fff; box-shadow: 0 0 0 1px rgba(23,34,26,.18); transform: translateX(-1px); pointer-events: none; }
+    .comparison-handle { position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; display: grid; place-items: center; border: 2px solid #fff; border-radius: 50%; color: var(--primary); background: #fff; box-shadow: 0 5px 18px rgba(23,34,26,.28); transform: translate(-50%, -50%); }
+    .comparison-handle svg { width: 23px; }
+    .comparison-range { position: absolute; z-index: 3; inset: 0; width: 100%; height: 100%; padding: 0; margin: 0; opacity: 0; cursor: ew-resize; }
     .showcase-copy .section-heading { max-width: 540px; }
     .showcase-copy > p { max-width: 535px; color: #c5d3ca; }
-    .benefits { display: grid; gap: 18px; margin-top: 35px; }
-    .benefit { display: grid; grid-template-columns: 34px 1fr; gap: 13px; }
-    .benefit-icon { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid rgba(201,239,112,.28); border-radius: 10px; color: var(--lime); background: rgba(255,255,255,.05); }
-    .benefit-icon svg { width: 17px; }
-    .benefit strong { display: block; margin: 1px 0 2px; font-size: 14px; }
-    .benefit span { color: #aebdb3; font-size: 13px; }
 
     .sharing { padding: 112px 0; overflow: hidden; }
     .sharing-grid { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: clamp(60px, 9vw, 120px); }
     .sharing-copy .section-heading { font-size: clamp(34px, 4vw, 48px); }
-    .text-link { display: inline-flex; align-items: center; gap: 6px; margin-top: 24px; color: var(--primary); font-weight: 750; text-underline-offset: 4px; }
-    .text-link svg { width: 17px; transition: transform .15s; }
-    .text-link:hover svg { transform: translateX(3px); }
     .share-preview { position: relative; min-height: 400px; }
     .share-preview::before {
       position: absolute; width: 390px; height: 390px; top: 6px; left: 50%; border: 56px solid rgba(201, 239, 112, .55);
@@ -262,6 +229,8 @@
     .pricing-header .section-heading { margin-bottom: 0; }
     .beta-banner { display: flex; align-items: center; gap: 12px; max-width: 430px; padding: 13px 16px; border: 1px solid #c8dfcd; border-radius: 13px; color: #31563a; background: #edf7ef; font-size: 13px; }
     .beta-banner svg { width: 19px; flex: 0 0 auto; color: var(--primary); }
+    .pricing-copy { max-width: 850px; margin: -10px 0 34px; color: var(--muted); }
+    .pricing-copy p { margin-bottom: 12px; }
     .preview-label { margin-bottom: 15px; color: #737d75; font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
     .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .price-card { position: relative; display: flex; flex-direction: column; padding: 29px; border: 1px solid var(--border); border-radius: 20px; background: #fff; box-shadow: var(--shadow-sm); }
@@ -274,15 +243,12 @@
     .plan-list { display: grid; gap: 11px; padding: 21px 0 25px; margin: 0 0 25px; border-top: 1px solid var(--border); list-style: none; }
     .plan-list li { display: flex; align-items: center; gap: 9px; font-size: 13px; }
     .plan-list svg { width: 17px; flex: 0 0 auto; color: var(--primary); }
-    .info-button { width: 32px; height: 32px; display: inline-grid; place-items: center; margin: -7px; padding: 0; border: 0; border-radius: 50%; color: #657068; background: transparent; cursor: pointer; }
-    .info-button:hover { color: var(--primary); background: var(--primary-soft); }
-    .info-button svg { width: 15px; }
-    .price-card .button { width: 100%; margin-top: auto; }
-    .fair-use-popover { position: absolute; z-index: 10; right: 22px; bottom: 90px; width: min(300px, calc(100% - 44px)); padding: 15px; border: 1px solid #c9d8cc; border-radius: 12px; color: var(--text); background: #fff; box-shadow: var(--shadow-md); font-size: 12px; line-height: 1.5; }
-    .fair-use-popover[hidden] { display: none; }
-    .fair-use-popover strong { display: block; margin-bottom: 4px; }
-    .pricing-disclaimer { margin: 18px 0 0; color: var(--muted); font-size: 13px; }
-
+    .credit-info-button { width: 28px; height: 28px; display: inline-grid; flex: 0 0 auto; place-items: center; margin: -6px -6px -6px auto; padding: 0; border: 0; border-radius: 50%; color: #657068; background: transparent; cursor: pointer; }
+    .credit-info-button:hover, .credit-info-button[aria-expanded="true"] { color: var(--primary); background: var(--primary-soft); }
+    .credit-info-button svg { width: 16px; }
+    .credit-popover { position: absolute; z-index: 10; right: 22px; bottom: 22px; left: 22px; padding: 15px; border: 1px solid #c9d8cc; border-radius: 12px; color: var(--text); background: #fff; box-shadow: var(--shadow-md); font-size: 12px; line-height: 1.5; }
+    .credit-popover[hidden] { display: none; }
+    .credit-popover strong { display: block; margin-bottom: 4px; }
     .faq { padding: 100px 0; }
     .faq-layout { display: grid; grid-template-columns: .62fr 1fr; gap: clamp(55px, 9vw, 120px); }
     .faq-intro { position: sticky; top: 105px; align-self: start; }
@@ -309,9 +275,9 @@
     .footer-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 25px; }
     .footer-links a { color: #445047; font-size: 13px; font-weight: 650; text-decoration: none; }
     .footer-links a:hover { color: var(--primary); text-decoration: underline; text-underline-offset: 4px; }
-    .footer-legal { display: flex; align-items: center; gap: 12px; }
-    .footer-legal-label { color: #7c867e; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .footer-bottom { min-height: 58px; display: flex; align-items: center; justify-content: space-between; gap: 30px; border-top: 1px solid #e5e9e5; color: #7c867e; font-size: 11px; }
+    .photo-credit { color: inherit; font-size: inherit; text-decoration: none; }
+    .photo-credit:hover { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
 
     @media (max-width: 1050px) {
       .hero-grid { grid-template-columns: .84fr 1.16fr; gap: 35px; }
@@ -349,7 +315,7 @@
       .feature-grid { grid-template-columns: 1fr; }
       .feature-card { min-height: 250px; }
       .showcase-copy { order: -1; }
-      .recipe-detail { width: min(100%, 610px); margin-inline: auto; }
+      .comparison { width: min(100%, 610px); margin-inline: auto; }
       .sharing-grid { gap: 50px; }
       .share-preview { min-height: 410px; }
       .price-grid { grid-template-columns: 1fr; }
@@ -367,7 +333,7 @@
       .nav-links { inset-block-start: 66px; }
       .hero { padding: 54px 0 46px; }
       .hero::before { width: 340px; height: 340px; top: -190px; right: -190px; border-width: 55px; }
-      h1 { font-size: clamp(39px, 12vw, 54px); }
+      h1 { font-size: clamp(34px, 10vw, 44px); }
       .hero-actions { display: grid; }
       .hero-actions .button { width: 100%; }
       .app-window { border-radius: 18px; }
@@ -385,9 +351,6 @@
       .trust-icon { display: none; }
       .feature-card { padding: 24px; }
       .feature-icon { margin-bottom: 34px; }
-      .detail-photo { height: 190px; min-height: 190px; }
-      .detail-photo img { width: 44%; height: 190px; min-height: 190px; }
-      .detail-content { width: min(78%, 390px); }
       .share-preview { min-height: 360px; }
       .share-preview::before { width: 310px; height: 310px; border-width: 43px; }
       .phone-card { width: min(300px, 88%); }
@@ -415,31 +378,30 @@
       "name": "Just Cook!",
       "applicationCategory": "LifestyleApplication",
       "operatingSystem": "Web",
-      "description": "A digital cookbook for scanning, importing, and organizing personal recipes.",
+      "description": "Bewahre handgeschriebene Familienrezepte und neue Lieblingsgerichte in deinem persönlichen digitalen Kochbuch.",
       "url": "https://just-cook.app/"
     }
   </script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
 
   <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="Just Cook! home">
+    <nav class="nav container" aria-label="Hauptnavigation">
+      <a class="brand" href="#top" aria-label="Just Cook! Startseite">
         <span class="brand-mark" aria-hidden="true">
           <img src="fav/favicon.svg" alt="">
         </span>
         Just Cook!
       </a>
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menü öffnen">
         <svg class="menu-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
       </button>
       <div class="nav-links" id="nav-links">
-        <a href="#features">Features</a>
-        <a href="#how-it-works">How it works</a>
-        <a href="#pricing">Pricing</a>
-        <a href="https://app.just-cook.net/login">Log in</a>
-        <a class="button button-primary nav-cta" href="https://app.just-cook.net/register">Try the beta for free</a>
+        <a href="#features">Funktionen</a>
+        <a href="#pricing">Preise</a>
+        <a href="#faq">Fragen</a>
+        <a class="button button-primary nav-cta" href="https://app.just-cook.net/login">Anmelden</a>
       </div>
     </nav>
   </header>
@@ -448,95 +410,88 @@
     <section class="hero" id="top">
       <div class="hero-grid container">
         <div class="hero-copy">
-          <div class="beta-note"><i aria-hidden="true"></i> Free during beta</div>
-          <p class="eyebrow">Your digital cookbook</p>
-          <h1>Favorite recipes. Finally <span class="marker">in one place.</span></h1>
-          <p class="hero-lead">Stop losing recipes in photos, open tabs, or notes. Scan, import, and organize everything you love to cook.</p>
+          <h1>Bewahre die Rezepte, die dir <span class="marker">am Herzen</span> liegen.</h1>
+          <p class="hero-lead">Dein persönliches, digitales Kochbuch für echte Familienschätze und neue Lieblingsgerichte.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://app.just-cook.net/register">Try the beta for free
+            <a class="button button-primary" href="https://app.just-cook.net/register">Jetzt kostenlos ausprobieren
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <a class="button button-secondary" href="#how-it-works">See how it works</a>
           </div>
-          <p class="hero-footnote">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Try every feature for free. No payment details required.
-          </p>
         </div>
 
-        <div class="app-stage" aria-label="Preview of the digital cookbook">
+        <div class="app-stage" role="img" aria-label="Vorschau des digitalen Kochbuchs">
           <div class="app-window">
             <div class="app-body">
-              <aside class="app-sidebar" aria-hidden="true">
-                <div class="app-side-brand"><span class="app-logo"><img src="fav/favicon.svg" alt=""></span><span><small>Your kitchen</small>Just Cook!</span></div>
-                <p class="app-nav-label">Your cookbook</p>
-                <div class="app-nav-item active"><svg viewBox="0 0 24 24" fill="none"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>All recipes</div>
-                <div class="app-nav-item"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg>Favorites</div>
-                <div class="app-categories"><span>Categories</span><span>+</span></div>
-                <div class="app-category">Grill</div><div class="app-category">Sauce</div><div class="app-category">Want to try</div>
-                <div class="app-settings"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z" stroke="currentColor" stroke-width="1.3"/></svg>Settings</div>
-              </aside>
+              <div class="app-sidebar" aria-hidden="true">
+                <div class="app-side-brand"><span class="app-logo"><img src="fav/favicon.svg" alt=""></span><span><small>Deine Küche</small>Just Cook!</span></div>
+                <p class="app-nav-label">Dein Kochbuch</p>
+                <div class="app-nav-item active"><svg viewBox="0 0 24 24" fill="none"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Alle Rezepte</div>
+                <div class="app-nav-item"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg>Favoriten</div>
+                <div class="app-categories"><span>Kategorien</span><span>+</span></div>
+                <div class="app-category">Grill</div><div class="app-category">Soßen</div><div class="app-category">Zum Ausprobieren</div>
+                <div class="app-settings"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3A1.7 1.7 0 0 0 10 3v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z" stroke="currentColor" stroke-width="1.3"/></svg>Einstellungen</div>
+              </div>
               <div class="app-content">
                 <div class="app-title-row">
-                  <div><p class="app-kicker">Your cookbook</p><h2 class="app-title">My Recipes</h2></div>
-                  <div class="app-search"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Search recipes</div>
+                  <div><p class="app-kicker">Dein Kochbuch</p><h2 class="app-title">Meine Rezepte</h2></div>
+                  <div class="app-search"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.7"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Rezepte suchen</div>
                 </div>
                 <div class="recipe-grid">
                   <article class="recipe-card">
-                    <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&amp;fit=crop&amp;w=640&amp;q=80" width="640" height="360" alt="Green salad with fresh vegetables"><button class="favorite" tabindex="-1" aria-label="Marked as favorite"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
-                    <div class="recipe-card-body"><div class="recipe-meta"><span>Salad</span><span>View recipe</span></div><h3 class="recipe-name">Green Summer Bowl</h3></div>
+                    <div class="recipe-photo"><img src="images/summer-salad.webp" width="640" height="360" alt="Grüner Salat mit frischem Gemüse"><button class="favorite" type="button" tabindex="-1" aria-label="Als Favorit markiert"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
+                    <div class="recipe-card-body"><div class="recipe-meta"><span>Salat</span><span>Rezept ansehen</span></div><h3 class="recipe-name">Grüner Sommersalat</h3></div>
                   </article>
                   <article class="recipe-card">
-                    <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;w=640&amp;q=80" width="640" height="360" alt="Pasta with herbs and Parmesan"><button class="favorite" tabindex="-1" aria-label="Add to favorites"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
-                    <div class="recipe-card-body"><div class="recipe-meta"><span>Pasta</span><span>View recipe</span></div><h3 class="recipe-name">Pasta al Limone</h3></div>
+                    <div class="recipe-photo"><img src="images/pasta-limone.webp" width="640" height="360" alt="Pasta mit Kräutern und Parmesan"><button class="favorite" type="button" tabindex="-1" aria-label="Zu Favoriten hinzufügen"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
+                    <div class="recipe-card-body"><div class="recipe-meta"><span>Pasta</span><span>Rezept ansehen</span></div><h3 class="recipe-name">Pasta al Limone</h3></div>
                   </article>
                   <article class="recipe-card">
-                    <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&amp;fit=crop&amp;w=640&amp;q=80" width="640" height="360" alt="Burger with fresh vegetables"><button class="favorite" tabindex="-1" aria-label="Add to favorites"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
-                    <div class="recipe-card-body"><div class="recipe-meta"><span>Dinner</span><span>View recipe</span></div><h3 class="recipe-name">Crispy Veggie Burger</h3></div>
+                    <div class="recipe-photo"><img src="images/veggie-burger.webp" width="640" height="360" alt="Burger mit frischem Gemüse"><button class="favorite" type="button" tabindex="-1" aria-label="Zu Favoriten hinzufügen"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
+                    <div class="recipe-card-body"><div class="recipe-meta"><span>Abendessen</span><span>Rezept ansehen</span></div><h3 class="recipe-name">Knuspriger Gemüseburger</h3></div>
                   </article>
                   <article class="recipe-card">
-                    <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&amp;fit=crop&amp;w=640&amp;q=80" width="640" height="360" alt="Fresh vegetables and a dish on a table"><button class="favorite" tabindex="-1" aria-label="Add to favorites"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
-                    <div class="recipe-card-body"><div class="recipe-meta"><span>Favorite</span><span>View recipe</span></div><h3 class="recipe-name">Roasted Vegetables with Dip</h3></div>
+                    <div class="recipe-photo"><img src="images/roasted-vegetables.webp" width="640" height="360" alt="Frisches Gemüse und ein Gericht auf einem Tisch"><button class="favorite" type="button" tabindex="-1" aria-label="Zu Favoriten hinzufügen"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
+                    <div class="recipe-card-body"><div class="recipe-meta"><span>Favorit</span><span>Rezept ansehen</span></div><h3 class="recipe-name">Ofengemüse mit Dip</h3></div>
                   </article>
                   <article class="recipe-card">
-                    <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&amp;fit=crop&amp;w=640&amp;q=80" width="640" height="360" alt="Colorful lentil salad"><button class="favorite" tabindex="-1" aria-label="Add to favorites"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
-                    <div class="recipe-card-body"><div class="recipe-meta"><span>Salad</span><span>View recipe</span></div><h3 class="recipe-name">Lentil Salad with Herbs</h3></div>
+                    <div class="recipe-photo"><img src="images/lentil-salad.webp" width="640" height="360" alt="Bunter Linsensalat"><button class="favorite" type="button" tabindex="-1" aria-label="Zu Favoriten hinzufügen"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
+                    <div class="recipe-card-body"><div class="recipe-meta"><span>Salat</span><span>Rezept ansehen</span></div><h3 class="recipe-name">Linsensalat mit Kräutern</h3></div>
                   </article>
                   <article class="recipe-card">
-                    <div class="recipe-photo"><img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&amp;fit=crop&amp;w=640&amp;q=80" width="640" height="360" alt="Fresh pasta with tomato sauce"><button class="favorite" tabindex="-1" aria-label="Add to favorites"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
-                    <div class="recipe-card-body"><div class="recipe-meta"><span>Pasta</span><span>View recipe</span></div><h3 class="recipe-name">Weeknight Tomato Pasta</h3></div>
+                    <div class="recipe-photo"><img src="images/tomato-pasta.webp" width="640" height="360" alt="Frische Pasta mit Tomatensoße"><button class="favorite" type="button" tabindex="-1" aria-label="Zu Favoriten hinzufügen"><svg viewBox="0 0 24 24" fill="none"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z" stroke="currentColor" stroke-width="1.7"/></svg></button></div>
+                    <div class="recipe-card-body"><div class="recipe-meta"><span>Pasta</span><span>Rezept ansehen</span></div><h3 class="recipe-name">Schnelle Tomatenpasta</h3></div>
                   </article>
                 </div>
               </div>
             </div>
           </div>
-          <div class="float-action" aria-hidden="true"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7V5a2 2 0 0 1 2-2h2l1.5 2H18a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12.5" r="3.5" stroke="currentColor" stroke-width="1.7"/></svg></span>Scan a recipe</div>
+          <div class="float-action" aria-hidden="true"><span class="float-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7V5a2 2 0 0 1 2-2h2l1.5 2H18a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12.5" r="3.5" stroke="currentColor" stroke-width="1.7"/></svg></span>Rezept fotografieren</div>
         </div>
       </div>
     </section>
 
     <div class="trust-line">
-      <div class="trust-inner container"><span class="trust-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8 7.5 9.5 4.4-1.5 7.5-4.9 7.5-9.5V6L12 3Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Made for the recipes you actually cook.</strong> No invented recommendations, no public feed - just your personal cookbook.</span></div>
+      <div class="trust-inner container"><span class="trust-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8 7.5 9.5 4.4-1.5 7.5-4.9 7.5-9.5V6L12 3Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><strong>Für Rezepte gemacht, die dir wirklich etwas bedeuten.</strong> Keine öffentliche Sammlung, kein Zettelchaos - nur dein persönliches Kochbuch.</span></div>
     </div>
 
     <section class="features" id="features">
       <div class="container">
         <div class="features-intro">
-          <div><p class="eyebrow">From anywhere to your cookbook</p><h2 class="section-heading">Easy to collect. Beautifully <span class="marker">organized.</span></h2></div>
-          <p class="section-copy">Whether your recipe lives on paper, in a browser tab, or only in your head, Just Cook! turns it into a clear, practical format.</p>
+          <div><h2 class="section-heading">Deine Lieblingsrezepte übersichtlich <span class="marker">an einem Ort</span></h2></div>
+          <p class="section-copy">So bleiben deine Lieblingsrezepte erhalten und jederzeit griffbereit.</p>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <span class="feature-number">01</span><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7V5a2 2 0 0 1 2-2h2l1.5 2H18a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12.5" r="3.5" stroke="currentColor" stroke-width="1.7"/></svg></span>
-            <h3>Photograph a recipe</h3><p>Take a photo of a recipe page. Just Cook! transfers the ingredients and instructions to your digital cookbook.</p>
+            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7V5a2 2 0 0 1 2-2h2l1.5 2H18a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12.5" r="3.5" stroke="currentColor" stroke-width="1.7"/></svg></span>
+            <h3>1. Einfach abfotografieren</h3><p>Fotografiere ein Rezept auf Papier oder aus einem Kochbuch. Unsere intelligente Texterkennung liest Handschrift und Buchtext und wandelt alles ohne Tipparbeit in ein übersichtliches Rezept um.</p>
           </article>
           <article class="feature-card">
-            <span class="feature-number">02</span><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.1-1.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <h3>Import a link</h3><p>Paste a recipe URL and save its contents instead of searching through bookmarks and tabs later.</p>
+            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.1-1.1" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            <h3>2. Aus dem Internet speichern</h3><p>Füge einfach den Link zu einem Rezept ein. Just Cook! übernimmt Zutaten und Anleitung für dich - ganz ohne störende Werbung.</p>
           </article>
           <article class="feature-card">
-            <span class="feature-number">03</span><span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h6l2 2h8v11H4V6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 13h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
-            <h3>Organize the way you cook</h3><p>Find recipes with search and categories, or mark your most reliable dishes as favorites.</p>
+            <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h6l2 2h8v11H4V6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 13h8M8 16h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+            <h3>3. Alles an seinem Platz</h3><p>Finde deine Gerichte sofort wieder. Ordne deine Rezepte in eigene Kategorien ein oder markiere deine absoluten Favoriten. Endlich Ordnung in der Küche.</p>
           </article>
         </div>
       </div>
@@ -544,23 +499,15 @@
 
     <section class="showcase" id="how-it-works">
       <div class="showcase-grid container">
-        <div class="recipe-detail" aria-label="Example recipe detail view">
-          <div class="detail-toolbar"><span>&larr;&nbsp; Recipes</span><span>Recipe</span><span aria-hidden="true"></span></div>
-          <div class="detail-photo"><img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;w=1200&amp;q=82" width="1200" height="675" loading="lazy" decoding="async" alt="Pasta with fresh herbs and Parmesan"><span class="detail-menu" aria-hidden="true">&#8942;</span></div>
-          <div class="detail-content">
-            <p class="detail-kicker">Main dish</p><h3 class="detail-title">Pasta al Limone</h3>
-            <div><h3>Ingredients</h3><ul class="ingredient-list"><li><strong>250 g</strong> spaghetti</li><li><strong>1</strong> organic lemon</li><li><strong>60 g</strong> Parmesan</li><li><strong>2 tbsp</strong> olive oil</li><li><strong>1 bunch</strong> basil</li></ul></div>
-            <div><h3>Instructions</h3><ol class="step-list"><li><span class="step-number">1</span><span>Cook the pasta in plenty of salted water until al dente. Reserve some pasta water.</span></li><li><span class="step-number">2</span><span>Mix the lemon zest, juice, Parmesan, and olive oil into a creamy sauce.</span></li><li><span class="step-number">3</span><span>Toss the pasta with the sauce, season to taste, and serve with basil.</span></li></ol></div>
-          </div>
+        <div class="comparison">
+          <img class="comparison-image" src="fav/recipe-handwritten.svg" width="1200" height="800" loading="lazy" alt="" aria-hidden="true">
+          <img class="comparison-image comparison-image-after" src="fav/recipe-digital.svg" width="1200" height="800" loading="lazy" alt="" aria-hidden="true">
+          <span class="comparison-divider" aria-hidden="true"><span class="comparison-handle"><svg viewBox="0 0 24 24" fill="none"><path d="m9 8-4 4 4 4M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+          <input class="comparison-range" type="range" min="0" max="100" value="50" aria-label="Vergleich zwischen handschriftlichem und digitalisiertem Rezept">
         </div>
         <div class="showcase-copy">
-          <p class="eyebrow">At hand while you cook</p><h2 class="section-heading">From a great find to a recipe you actually use.</h2>
-          <p>Every saved recipe stays easy to follow, with a cover image, exact quantities, and clearly numbered steps. You can always see what comes next.</p>
-          <div class="benefits">
-            <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><strong>A clear ingredient list</strong><span>Quantities and ingredients at a glance.</span></div></div>
-            <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><strong>Step by step</strong><span>Calmly structured without unnecessary distractions.</span></div></div>
-            <div class="benefit"><span class="benefit-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4zM4 15l4-4 4 4 3-3 5 5" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="15.5" cy="8.5" r="1.5" stroke="currentColor" stroke-width="1.5"/></svg></span><div><strong>Your own cover image</strong><span>Your recipe looks as familiar as it tastes.</span></div></div>
-          </div>
+          <h2 class="section-heading">Entspannt kochen, ohne den Faden zu verlieren</h2>
+          <p>Ziehe den Regler und sieh, wie aus einem handschriftlichen Rezept eine klare, gut lesbare Kochansicht wird.</p>
         </div>
       </div>
     </section>
@@ -568,17 +515,16 @@
     <section class="sharing" id="sharing">
       <div class="sharing-grid container">
         <div class="sharing-copy">
-          <p class="eyebrow">Made to share</p><h2 class="section-heading">Good recipes are worth sharing.</h2>
-          <p class="section-copy">Send family and friends a simple link. They can view the recipe right away, neatly formatted and without a mess of screenshots.</p>
-          <a class="text-link" href="https://app.just-cook.net/register">Start your own cookbook <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <h2 class="section-heading">Teile den Genuss mit deinen Liebsten</h2>
+          <p class="section-copy">Teile deine besten Rezepte ganz unkompliziert. Du kannst einen einfachen Link an Familie und Freunde schicken. Diese können das Rezept sofort gut lesbar auf ihrem Handy öffnen - ganz ohne komplizierte Technik oder App-Installation.</p>
         </div>
-        <div class="share-preview" aria-label="Preview of a shared recipe">
+        <div class="share-preview" role="img" aria-label="Vorschau eines geteilten Rezepts">
           <div class="phone-card">
-            <div class="phone-header"><span>just-cook.app</span><span>Shared recipe</span></div>
-            <div class="share-image"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&amp;fit=crop&amp;w=800&amp;q=80" width="800" height="450" loading="lazy" decoding="async" alt="Colorful vegetable bowl"></div>
-            <div class="phone-content"><p class="app-kicker">Shared by Lena</p><h3>Green Summer Bowl</h3><div class="phone-meta"><span>20 minutes</span><span>8 ingredients</span><span>Vegetarian</span></div></div>
+            <div class="phone-header"><span>just-cook.app</span><span>Geteiltes Rezept</span></div>
+            <div class="share-image"><img src="images/summer-salad.webp" width="800" height="450" loading="lazy" decoding="async" alt="Bunte Schale mit frischem Gemüse"></div>
+            <div class="phone-content"><p class="app-kicker">Geteilt von Lena</p><h3>Grüner Sommersalat</h3><div class="phone-meta"><span>20 Minuten</span><span>8 Zutaten</span><span>Vegetarisch</span></div></div>
           </div>
-          <div class="share-toast" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Link copied</div>
+          <div class="share-toast" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Link kopiert</div>
         </div>
       </div>
     </section>
@@ -586,43 +532,46 @@
     <section class="pricing" id="pricing">
       <div class="container">
         <div class="pricing-header">
-          <div><p class="eyebrow">Easy to try</p><h2 class="section-heading">Free in beta. <span class="marker">Fair pricing</span> later.</h2></div>
-          <div class="beta-banner"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8 7.5 9.5 4.4-1.5 7.5-4.9 7.5-9.5V6L12 3Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Just Cook! is in beta.</strong><br>Try every feature for free right now.</span></div>
+          <div><h2 class="section-heading">Unsere Preise (nach der aktuellen <span class="marker">Testphase</span>)</h2></div>
+          <div class="beta-banner"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8 7.5 9.5 4.4-1.5 7.5-4.9 7.5-9.5V6L12 3Z" stroke="currentColor" stroke-width="1.7"/><path d="m8.5 12 2.2 2.2 4.8-5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong>Aktuell komplett kostenlos</strong><br>Alle Funktionen sind unbegrenzt nutzbar.</span></div>
         </div>
-        <p class="preview-label">Planned pricing after beta</p>
+        <div class="pricing-copy">
+          <p>Im Moment befindet sich Just Cook! in der Testphase. Für dich bedeutet das: Alles ist komplett kostenlos und unbegrenzt nutzbar.</p>
+          <p>Wir möchten aber von Anfang an ehrlich zu dir sein, wie es nach dieser Testphase weitergeht. Da das automatische Einlesen von Bildern und Internetseiten im Hintergrund kleine Gebühren verursacht, arbeiten wir künftig mit einem fairen und einfachen Guthaben-System (&quot;Credits&quot;).</p>
+        </div>
+        <p class="preview-label">Geplante Preise nach der Testphase</p>
         <div class="price-grid">
-          <article class="price-card"><div class="plan-name">Free</div><div class="price">€0</div><p class="price-sub">Free, even after beta.</p><ul class="plan-list"><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Every product feature</li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 8 recipe scans</li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Import, search, and sharing</li></ul><a class="button button-secondary" href="https://app.just-cook.net/register">Try the beta for free</a></article>
-          <article class="price-card featured"><span class="popular">Popular</span><div class="plan-name">Monthly</div><div class="price">€3.99 <small>/ month</small></div><p class="price-sub">Stay flexible with monthly billing.</p><ul class="plan-list"><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Every product feature</li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Recipe scans under fair use <button class="info-button" type="button" aria-label="What does fair use mean?" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Monthly billing</li></ul><div class="fair-use-popover" role="dialog" aria-label="Fair use explanation" hidden><strong>What does fair use mean?</strong>The included API budget of €0.50 covers roughly 200 recipe scans. You can add more API usage if needed.</div><a class="button button-primary" href="https://app.just-cook.net/register">Try the beta for free</a></article>
-          <article class="price-card"><div class="plan-name">Lifetime</div><div class="price">€12.99 <small>one-time</small></div><p class="price-sub">Pay once instead of subscribing.</p><ul class="plan-list"><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Every product feature</li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Recipe scans under fair use <button class="info-button" type="button" aria-label="What does fair use mean?" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>One-time payment</li></ul><div class="fair-use-popover" role="dialog" aria-label="Fair use explanation" hidden><strong>What does fair use mean?</strong>The included API budget of €2.00 covers roughly 800 recipe scans. You can add more API usage if needed.</div><a class="button button-secondary" href="https://app.just-cook.net/register">Try the beta for free</a></article>
+          <article class="price-card"><h3 class="plan-name">Kostenlos</h3><div class="price">0 €</div><p class="price-sub">Für den gelegentlichen Gebrauch - jeden Monat neu.</p><ul class="plan-list"><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>10 Credits im Monat geschenkt</span><button class="credit-info-button" type="button" aria-label="Credits erklären" aria-expanded="false" aria-controls="credit-info-free"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Reicht z.B. für 10 abfotografierte Rezepte pro Monat</li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Alle Funktionen der App inklusive</li></ul><div class="credit-popover" id="credit-info-free" role="tooltip" hidden><strong>Credits kurz erklärt</strong>1 Credit wandelt ein Foto um, 3 Credits importieren ein Rezept per Link. Manuelle Rezepte kosten keine Credits.</div></article>
+          <article class="price-card"><h3 class="plan-name">Monatlich</h3><div class="price">0,99 € <small>/ Monat</small></div><p class="price-sub">Für alle, die regelmäßig neue Rezepte ausprobieren.</p><ul class="plan-list"><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>100 Credits jeden Monat</span><button class="credit-info-button" type="button" aria-label="Credits erklären" aria-expanded="false" aria-controls="credit-info-monthly"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Viel Spielraum für deine Fotos und Internet-Funde</li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Jederzeit monatlich kündbar</li></ul><div class="credit-popover" id="credit-info-monthly" role="tooltip" hidden><strong>Credits kurz erklärt</strong>1 Credit wandelt ein Foto um, 3 Credits importieren ein Rezept per Link. Manuelle Rezepte kosten keine Credits.</div></article>
+          <article class="price-card featured"><span class="popular">Bestes Angebot</span><h3 class="plan-name">Jährlich</h3><div class="price">9,99 € <small>/ Jahr</small></div><p class="price-sub">Unser bestes Angebot für fleißige Sammler (entspricht nur ca. 83 Cent im Monat).</p><ul class="plan-list"><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>1.000 Credits für das ganze Jahr</span><button class="credit-info-button" type="button" aria-label="Credits erklären" aria-expanded="false" aria-controls="credit-info-yearly"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button></li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Teile dir dein Guthaben flexibel über 12 Monate ein</li><li><svg viewBox="0 0 24 24" fill="none"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Ein ganzes Jahr lang in Ruhe Rezepte digitalisieren</li></ul><div class="credit-popover" id="credit-info-yearly" role="tooltip" hidden><strong>Credits kurz erklärt</strong>1 Credit wandelt ein Foto um, 3 Credits importieren ein Rezept per Link. Manuelle Rezepte kosten keine Credits.</div></article>
         </div>
-        <p class="pricing-disclaimer">If you need more scans, you can add API usage when needed. There are no automatic extra charges.</p>
       </div>
     </section>
 
     <section class="faq" id="faq">
       <div class="faq-layout container">
-        <div class="faq-intro"><p class="eyebrow">Any questions?</p><h2 class="section-heading">The short version.</h2><p class="section-copy">Everything you need to know about the current beta and planned pricing.</p></div>
+        <div class="faq-intro"><h2 class="section-heading">Hast du noch Fragen?</h2><p class="section-copy">Wir möchten, dass du dich bei uns wohlfühlst. Hier sind die wichtigsten Antworten:</p></div>
         <div class="faq-list">
-          <details open><summary>How much does Just Cook! cost during beta?</summary><p>Invited users can try every available feature for free during beta. No payment details are required.</p></details>
-          <details><summary>What is included in the planned Free plan?</summary><p>The Free plan is intended to include every product feature, with a limit of eight recipe scans in total.</p></details>
-          <details><summary>What does fair use mean for recipe scans?</summary><p>Recipe scans incur API costs. On Monthly, €0.50 in API costs covers about 200 scans; on Lifetime, €2.00 covers about 800. Additional API usage will be available when needed.</p></details>
-          <details><summary>Is the Lifetime plan final?</summary><p>No. The exact definition and terms of Lifetime access will be published transparently and reviewed legally before launch.</p></details>
-          <details><summary>Can I share my recipes?</summary><p>Yes. You can send a recipe link that opens a clean, easy-to-read recipe view for anyone.</p></details>
+          <details open><summary>Was kostet Just Cook! aktuell in der Testphase?</summary><p>Gar nichts. Während unserer Testphase kannst du alle Funktionen völlig kostenlos und ohne jede Begrenzung ausprobieren - das Credit-System gilt aktuell noch nicht. Du musst auch keine Zahlungsdaten hinterlegen. Genieße es einfach, deine ersten Rezepte zu speichern!</p></details>
+          <details><summary>Was genau sind diese &quot;Credits&quot; und wie werden sie verbraucht?</summary><p>Jeder Handgriff, den unsere Technik für dich übernimmt, kostet einen kleinen Beitrag von deinem Guthaben. Ein Foto von einem Rezept umzuwandeln kostet 1 Credit, der Import über einen Link 3 Credits. Das manuelle Eintippen von Rezepten kostet natürlich niemals Credits. Wenn dein Guthaben aufgebraucht ist, gibt es keine automatischen Abbuchungen oder versteckten Kosten.</p></details>
+          <details><summary>Übertragen sich meine restlichen Credits auf den nächsten Monat?</summary><p>In einem laufenden kostenpflichtigen Abo werden ungenutzte Credits in den nächsten Abrechnungszeitraum übernommen. Im kostenlosen Tarif werden Credits nicht übertragen. Nach einer Kündigung verfallen verbleibende Abo-Credits mit dem Ende der gebuchten Laufzeit.</p></details>
+          <details><summary>Behalte ich meine Rezepte, auch wenn ich mal keine Credits mehr habe?</summary><p>Ja, absolut! Deine bereits gespeicherten Rezepte kannst du dir immer ansehen, danach kochen und sie mit Freunden teilen - ganz egal, wie viele Credits du gerade hast.</p></details>
+          <details><summary>Kann ich meine Rezepte wirklich einfach teilen?</summary><p>Ja, das ist ganz leicht. Du verschickst einfach einen Link (z.B. über WhatsApp oder E-Mail). Der Empfänger sieht das Rezept sofort wunderschön formatiert auf seinem Bildschirm.</p></details>
         </div>
       </div>
     </section>
 
     <section class="final-cta">
-      <div class="cta-card container"><div><p class="eyebrow">Ready for less recipe chaos?</p><h2>Your next favorite recipe already has a place.</h2><p>Start your personal digital cookbook today.</p></div><a class="button button-primary" href="https://app.just-cook.net/register">Try the beta for free <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+      <div class="cta-card container"><div><h2>Dein nächstes Lieblingsrezept hat bereits einen Platz gefunden.</h2><p>Starte noch heute dein persönliches, digitales Kochbuch.</p></div><a class="button button-primary" href="https://app.just-cook.net/register">Jetzt kostenlos ausprobieren <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-main container">
-      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><img src="fav/favicon.svg" alt=""></span>Just Cook!</a><p>The calm digital cookbook for recipes you actually cook.</p></div>
-      <nav class="footer-links" aria-label="Footer navigation"><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="https://app.just-cook.net/login">Log in</a><span class="footer-legal"><a href="/legal#impressum">Impressum</a><a href="/legal#datenschutz">Datenschutz</a><a href="/legal#agb">AGB</a><a href="/legal#widerruf">Widerruf</a></span></nav>
+      <div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><img src="fav/favicon.svg" alt=""></span>Just Cook!</a><p>Das persönliche digitale Kochbuch für Rezepte, die dir am Herzen liegen.</p></div>
+      <nav class="footer-links" aria-label="Rechtliche Navigation"><a href="/legal#impressum">Impressum</a><a href="/legal#datenschutz">Datenschutz</a><a href="/legal#agb">AGB</a><a href="/legal#widerruf">Widerruf</a></nav>
     </div>
-    <div class="footer-bottom container"><span>© <span id="year">2026</span> Just Cook!</span><span>Designed with an appetite.</span></div>
+    <div class="footer-bottom container"><span>© <span id="year">2026</span> Just Cook!</span><span>Mit Appetit entwickelt.</span><a class="photo-credit" href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Fotos von Unsplash</a></div>
   </footer>
 
   <script>
@@ -632,7 +581,7 @@
     function closeMenu() {
       navLinks.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
-      menuButton.setAttribute('aria-label', 'Open menu');
+      menuButton.setAttribute('aria-label', 'Menü öffnen');
       document.body.classList.remove('menu-open');
     }
 
@@ -640,17 +589,24 @@
       const willOpen = !navLinks.classList.contains('open');
       navLinks.classList.toggle('open', willOpen);
       menuButton.setAttribute('aria-expanded', String(willOpen));
-      menuButton.setAttribute('aria-label', willOpen ? 'Close menu' : 'Open menu');
+      menuButton.setAttribute('aria-label', willOpen ? 'Menü schließen' : 'Menü öffnen');
       document.body.classList.toggle('menu-open', willOpen);
     });
 
     navLinks.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 
-    const infoButtons = document.querySelectorAll('.info-button');
+    document.querySelectorAll('.comparison-range').forEach((range) => {
+      const comparison = range.closest('.comparison');
+      range.addEventListener('input', () => {
+        comparison.style.setProperty('--split', `${range.value}%`);
+      });
+    });
 
-    function closePopovers(except) {
-      infoButtons.forEach((button) => {
-        const popover = button.closest('.price-card').querySelector('.fair-use-popover');
+    const creditInfoButtons = document.querySelectorAll('.credit-info-button');
+
+    function closeCreditPopovers(except) {
+      creditInfoButtons.forEach((button) => {
+        const popover = document.getElementById(button.getAttribute('aria-controls'));
         if (popover !== except) {
           popover.hidden = true;
           button.setAttribute('aria-expanded', 'false');
@@ -658,24 +614,24 @@
       });
     }
 
-    infoButtons.forEach((button) => {
-      const popover = button.closest('.price-card').querySelector('.fair-use-popover');
+    creditInfoButtons.forEach((button) => {
+      const popover = document.getElementById(button.getAttribute('aria-controls'));
       button.addEventListener('click', (event) => {
         event.stopPropagation();
         const willOpen = popover.hidden;
-        closePopovers(popover);
+        closeCreditPopovers(popover);
         popover.hidden = !willOpen;
         button.setAttribute('aria-expanded', String(willOpen));
       });
     });
 
     document.addEventListener('click', (event) => {
-      if (!event.target.closest('.fair-use-popover')) closePopovers();
+      if (!event.target.closest('.credit-popover')) closeCreditPopovers();
     });
 
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
-        closePopovers();
+        closeCreditPopovers();
         closeMenu();
       }
     });
